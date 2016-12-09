@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Concentration.Resources">
+    
+    <!-- Colors  -->
+    <Color x:Key="ConcentrationRed" A="255" R="109" G="29" B="22" />
+    <Color x:Key="ConcentrationYellow" A="255" R="234" G="190" B="101" />
+    <Color x:Key="ConcentrationBlue" A="255" R="58" G="70" B="252" />
+    <Color x:Key="ConcentrationDropShadowRed" A="255" R="162" G="58" B="5" />
+    <Color x:Key="ConcentrationWildYellow" A="255" R="255" G="238" B="0" />
+    
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="ConcentrationRedBrush" Color="{StaticResource ConcentrationRed}" />
+    <SolidColorBrush x:Key="ConcentrationYellowBrush" Color="{StaticResource ConcentrationYellow}" />
+    <SolidColorBrush x:Key="ConcentrationBlueBrush" Color="{StaticResource ConcentrationBlue}" />
+    <SolidColorBrush x:Key="ConcentrationDropShadowRedBrush" Color="{StaticResource ConcentrationDropShadowRed}" />
+    <SolidColorBrush x:Key="ConcentrationWildYellowBrush" Color="{StaticResource ConcentrationWildYellow}" />
+    
+</ResourceDictionary>
