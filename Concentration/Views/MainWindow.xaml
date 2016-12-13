@@ -21,6 +21,15 @@
             <converters:IntSecondsToTimeConverter x:Key="IntSecondsToTimeConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
+            <!-- Styles -->
+            <Style x:Key="ExtraButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="{StaticResource ConcentrationYellowBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource ConcentrationDropShadowRedBrush}"  />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="BorderThickness" Value="4"/>
+            </Style>
             
             <!-- Data Templates -->
             <DataTemplate x:Key="SquareTemplate" DataType="{x:Type models:Square}">
@@ -167,9 +176,10 @@
             </Grid>
         </Border>
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <Button Content="Winner" Command="{Binding WinnerCommand}" />
-            <Button Content="Reset" Command="{Binding ResetCommand}" />
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+            <Button Content="Winner" Command="{Binding WinnerCommand}" Style="{StaticResource ExtraButtonStyle}" />
+            <Button Content="Reset" Command="{Binding ResetCommand}" Style="{StaticResource ExtraButtonStyle}" />
+            <Button Content="Exit" Command="{Binding ExitCommand}" Style="{StaticResource ExtraButtonStyle}" Background="{StaticResource ConcentrationDropShadowRedBrush}" Foreground="White" />
         </StackPanel>
 
         <Border Background="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="6,0,6,3" CornerRadius="4" Margin="0,4,0,0" BorderBrush="White" BorderThickness="2" Visibility="{Binding TimerVisible, Converter={StaticResource BooleanToVisibilityConverter}}" >

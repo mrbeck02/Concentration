@@ -1,18 +1,6 @@
-﻿// * MOBILEMEDTEK CONFIDENTIAL                                                 |
-// * -------------------------                                                 |
-// * Copyright 2016 MobileMedTek. All rights reserved.                         |
-// *                                                                           |
-// * NOTICE:  All information contained herein is, and remains                 |
-// * the property of MobileMedTek. The intellectual and                        |
-// * technical concepts contained herein are proprietary to MobileMedTek       |
-// * and its suppliers and may be covered by U.S. and Foreign Patents,         |
-// * patents in process, and are protected by trade secret or copyright law.   |
-// * Dissemination of this information or reproduction of this material        |
-// * is strictly forbidden unless prior written permission is obtained         |
-// * from MobileMedTek.                                                        |
-
-using Concentration.Models;
+﻿using Concentration.Models;
 using Concentration.Utilities;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -203,6 +191,27 @@ namespace Concentration.ViewModels
         private void numberClickedCommand(Square square)
         {
             processSquareClick(square);
+        }
+
+        #endregion
+
+        #region Exit Command
+
+        private RelayCommand _exitCommand;
+
+        public RelayCommand ExitCommand
+        {
+            get { return _exitCommand ?? (_exitCommand = new RelayCommand(exitCommand)); }
+        }
+
+        private void exitCommand(object obj)
+        {
+            var result = MessageBox.Show("Are you sure you want to exit Concentration?", "Exit?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         #endregion
